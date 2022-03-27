@@ -3,19 +3,26 @@ import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Surveys from '../views/Surveys.vue'
 import DefaultLayout from '../components/DefaultLayout.vue'
+import AuthLayout from '../components/AuthLayout.vue'
 import Register from '../views/Register.vue'
 import store from '../store'
 
-const routes = [
-    {
-        path: '/login',
-        name: 'Login',
-        component: Login
-    },
-    {
-        path: '/register',
-        name: 'Register',
-        component: Register
+const routes = [{
+        path: '/auth',
+        name: 'Auth',
+        redirect: '/Login',
+        component: AuthLayout,
+        children: [{
+                path: '/login',
+                name: 'Login',
+                component: Login
+            },
+            {
+                path: '/register',
+                name: 'Register',
+                component: Register
+            },
+        ]
     },
     {
         path: '/',

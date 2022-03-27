@@ -1,12 +1,12 @@
-import {createStore} from 'vuex'
+import { createStore } from 'vuex'
 
 const store = createStore({
     state: {
         user: {
-            data:{
+            data: {
                 name: 'Kareem',
             },
-            token: "123" 
+            // token: "123" 
         }
     },
     getters: {},
